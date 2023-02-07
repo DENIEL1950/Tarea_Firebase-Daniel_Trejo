@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import { db } from './Firebase-config'
+import '/app.css';
+import { conllection, getDocs} from 'firebase/firestore';
+import { async } from '@firebase/util';
 
 function App() {
+  const tareaColeccionRef= collection(db, "tareas");
+
+  useEffect(()=>{
+    async function getTareas(){
+      const data = await getDocs(tareaColeccionRef)
+      console.log(data);
+    }
+    getTareas();
+  })
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
 }
