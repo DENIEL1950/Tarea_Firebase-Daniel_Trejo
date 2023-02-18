@@ -1,0 +1,2 @@
+Calificación: 1.5/2
+Tiene mensajes en la consola.
